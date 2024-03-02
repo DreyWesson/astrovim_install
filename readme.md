@@ -1,3 +1,7 @@
+# Neovim for 42 Students
+
+So you are a 42 student and I know you are as geeky as it gets - so you gotta be using vim for all of it's benefit - you know do away with the mices. Immediately you realise setting it up on your school workspace is not as easy as you'd thought as you can not just brew install and you have no sudo permission and all that stuff. The nvim that comes with the linux is not the latest therefore making it difficult to use AstroNvim. This is a hassle free workthrough on how to set it up.
+
 ### Clone Neovim Repository
 Clone the Neovim repository from GitHub into your home directory (or any other directory where you have write permissions):
 
@@ -17,7 +21,6 @@ make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=$HOME/neovim
 ```
 
 ### Build Neovim:
-
 ```bash
 make -j4
 ```
@@ -60,4 +63,16 @@ git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 Now install AstroNvim plugins with the nvim command
 ```bash
 nvim
+```
+
+
+Now, so that fringe events doesn't happen to your settings lets check what configuration is being served to your vim
+To do that, open nvim and type this command
+```
+:echo $MYVIMRC
+```
+If it is empty that's a bad sign but don't worry we can fit that with a simple command.
+Add the command below to your .zshrc/.bashrc file
+```bash
+export MYVIMRC="$HOME/.config/nvim/init.lua"
 ```
